@@ -32,7 +32,7 @@ public class PriceServiceImpl implements PriceService {
     }
 
     @Override
-    public PriceData getPriceByDate(LocalDateTime applicationDate, Long productId, Long brandId) {
+    public Price getPriceByDate(LocalDateTime applicationDate, Long productId, Long brandId) {
         Brand brand = checkBrand(brandId);
         LOGGER.info("Se busca el precio a aplicar para la marca {}, producto {}, y fecha {}",
                 brand.getBrandId().getValue(), productId, applicationDate);
@@ -45,9 +45,7 @@ public class PriceServiceImpl implements PriceService {
         });
         LOGGER.info("Se encontro el precio a aplicar para la marca {}, producto {}, y fecha {}",
                 brandId, productId, applicationDate);
-        return new PriceData(price.getProductId(), price.getBrandId().getValue(),
-                price.getPriceList(), price.getStartDate(),
-                price.getEndDate(), price.getPrice());
+        return price;
     }
 
     /**

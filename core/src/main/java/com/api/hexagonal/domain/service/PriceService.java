@@ -1,5 +1,7 @@
 package com.api.hexagonal.domain.service;
 
+import com.api.hexagonal.domain.entity.Price;
+
 import java.time.LocalDateTime;
 
 /**
@@ -8,5 +10,5 @@ import java.time.LocalDateTime;
  */
 public interface PriceService {
 
-    PriceData getPriceByDate(LocalDateTime applicationDate, Long productId, Long brandId);
+    Price getPriceByDate(LocalDateTime applicationDate, Long productId, Long brandId);
 }
