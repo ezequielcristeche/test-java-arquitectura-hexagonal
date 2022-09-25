@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @Api(tags = "Prices")
 @RestController
 public class PriceController {
@@ -21,9 +23,9 @@ public class PriceController {
     @Autowired
     private PriceApplicationService priceApplicationService;
 
-    @PostMapping("/prices")
+    @PostMapping("/api/hexagonal/prices")
     @ApiOperation(value = "Busca el precio a aplicar según fecha, codigo de marca y codigo de producto")
-    public ResponseEntity<PriceResponseDTO> getPriceByDate(@RequestBody PriceDTO priceDTO) {
+    public ResponseEntity<PriceResponseDTO> getPriceByDate(@Valid @RequestBody PriceDTO priceDTO) {
         PriceResponseDTO priceResponseDTO = priceApplicationService.getAppliedPriceByDate(priceDTO);
         return new ResponseEntity<>(priceResponseDTO, HttpStatus.OK);
     }
