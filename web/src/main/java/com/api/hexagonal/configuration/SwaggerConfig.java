@@ -20,6 +20,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Clase de configuracion de Swagger
+ * @author Ezequiel Cristeche
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {

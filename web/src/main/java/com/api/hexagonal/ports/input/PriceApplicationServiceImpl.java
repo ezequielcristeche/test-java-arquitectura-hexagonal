@@ -16,6 +16,7 @@ public class PriceApplicationServiceImpl implements PriceApplicationService {
     @Autowired
     private PriceService priceService;
 
+    @Autowired
     private PriceDataMapper priceDataMapper;
 
     @Override

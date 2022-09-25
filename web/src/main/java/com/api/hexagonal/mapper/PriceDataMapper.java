@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class PriceDataMapper {
 
     public PriceResponseDTO convertDomainToDto(Price price) {
+
         return PriceResponseDTO.builder()
                 .productId(price.getProductId().longValue())
                 .brandId(price.getBrandId().getValue())
