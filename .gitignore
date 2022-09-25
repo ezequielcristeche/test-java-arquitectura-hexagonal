@@ -4,7 +4,7 @@ target/
 bin/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**
-!**/src/test/**
+!**/src/test/** 
 
 
 # Node artifact files
